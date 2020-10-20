@@ -1,0 +1,82 @@
+[
+	{
+		"id_restaurants" : 1,
+		"name" : "Tulsi Vegan Restaurant",
+		"address" : "C. del Consell de Cent, 279, 08011 Barcelona",
+		"lat" : 41.388,
+		"lng" : 2.16104,
+		"kind_food" : "Vegetariano"
+	},
+	{
+		"id_restaurants" : 2,
+		"name" : "Mosaic",
+		"address" : "Plaça de Milagros Consarnau i Sabaté, 30, 08902 L'Hospitalet de Llobregat, Barcelona",
+		"lat" : 41.3659,
+		"lng" : 2.12997,
+		"kind_food" : "Árabe, Vegetariana, Mediterránea"
+	},
+	{
+		"id_restaurants" : 3,
+		"name" : "Ichiban Sushi",
+		"address" : "Carrer del Vallespir, 130, 08014 Barcelona",
+		"lat" : 41.3823,
+		"lng" : 2.13542,
+		"kind_food" : "Asiática"
+	},
+	{
+		"id_restaurants" : 4,
+		"name" : "La Taquería",
+		"address" : "Passatge de Font, 5, 08013 Barcelona",
+		"lat" : 41.4026,
+		"lng" : 2.17554,
+		"kind_food" : "Mexicana"
+	},
+	{
+		"id_restaurants" : 5,
+		"name" : "Palacio de China",
+		"address" : "Carrer de la Marina, 87, 08018 Barcelona",
+		"lat" : 41.3935,
+		"lng" : 2.18834,
+		"kind_food" : "Asiática"
+	},
+	{
+		"id_restaurants" : 6,
+		"name" : "Gandhi",
+		"address" : "Carrer de Balmes, 21, 08007 Barcelona",
+		"lat" : 41.3878,
+		"lng" : 2.16445,
+		"kind_food" : "Asiática, Vegetariana"
+	},
+	{
+		"id_restaurants" : 7,
+		"name" : "Alo Beirut",
+		"address" : "Carrer d'Aribau, 90, 08036 Barcelona",
+		"lat" : 41.3898,
+		"lng" : 2.15774,
+		"kind_food" : "Árabe"
+	},
+	{
+		"id_restaurants" : 8,
+		"name" : "Aladdin",
+		"address" : "Avinguda de Gaudí, 50, 08025 Barcelona",
+		"lat" : 41.409,
+		"lng" : 2.1876,
+		"kind_food" : "Árabe, Vegetariana"
+	},
+	{
+		"id_restaurants" : 9,
+		"name" : "La Catrina Fusion",
+		"address" : "Carrer de la Providència, 88, 08024 Barcelona",
+		"lat" : 41.4081,
+		"lng" : 2.15941,
+		"kind_food" : "Mediterránea, Mexicana, Vegetariana"
+	},
+	{
+		"id_restaurants" : 10,
+		"name" : "Bar Delicias",
+		"address" : "Carrer de Mühlberg, 1, 08024 Barcelona",
+		"lat" : 41.4183,
+		"lng" : 2.15758,
+		"kind_food" : "Mediterránea"
+	}
+]
