@@ -5,18 +5,10 @@ var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}
 
 //en el clusters almaceno todos los markers
 var markers = L.markerClusterGroup();
-/*var data_markers = fetch("http://localhost/mapa/api/apiRestaurants.php")
-	.then((resposta) => {
-		return resposta.json()
-	})
-	.then((data) => {
-
-	});*/
 var data_markers = [];
 var kind_food = [];
 
 function onMapLoad() {
-
 	console.log("Mapa cargado");
 
     
@@ -35,49 +27,52 @@ function onMapLoad() {
 							kind_food.push(kindFoodEach[i]);
 						}
 					}
-					$('#kind_food_selector').html("");
+					$("#kind_food_selector").html(new Option('Todos', 'all'));
 					for(i=0;i<kind_food.length; i++){
-					$('#kind_food_selector').html($('#kind_food_selector').html()+`
-					<option>${kind_food[i]}</option>`);
-				}
+						$("#kind_food_selector").append(new Option(kind_food[i], kind_food[i]));
+					}
 				});
 				//console.log(kind_food);
 				//console.log(data_markers);
-				render_to_map();
+		//3) Llamo a la función para --> render_to_map(data_markers, 'all'); <-- para mostrar restaurantes en el mapa
+				render_to_map(data_markers, "all");
+				console.log("all on map");
 		});
 	});
 };
-		
-		//3) Llamo a la función para --> render_to_map(data_markers, 'all'); <-- para mostrar restaurantes en el mapa
-function render_to_map(){
-	for(i=0;i<data_markers.length; i++){
-		markers.addLayer(
-		 L.marker([data_markers[i].lat, data_markers[i].lng]).addTo(map).bindPopup("<b>"+data_markers[i].name+"</b>"+"<br>"+data_markers[i].address+"<br><br>"+data_markers[i].kind_food).openPopup()
-		 );
-	};
-};
+	
 	
 
-
 $("#kind_food_selector").on("change", function(){
-	for(i=data_markers.length;i>0;i--){
-	console.log("Hola");
-	map.removeLayer(markers);  
-	//markers.clearLayers();
-
-	//map.remove(markers);
-	//markers.clearLayers();
-}
-	/*for(i=0;i<data_markers.length; i++){
-		map.removeLayer(data_markers[i]);
-	};*/
-
+	console.log(this.value);
+	render_to_map(data_markers, this.value);
 });
 
 	/*
 	FASE 3.2
 		1) Limpio todos los marcadores
-		2) Realizo un bucle para decidir que marcadores cumplen el filtro, y los agregamos al mapa
-	*/	
+	*/
+function render_to_map(data_markers, filter){
+	markers.clearLayers();
+	//2) Realizo un bucle para decidir que marcadores cumplen el filtro, y los agregamos al mapa
+
+	if(filter == "all"){
+		for(i=0;i<data_markers.length; i++){
+			var marker = L.marker([data_markers[i].lat, data_markers[i].lng]).bindPopup("<b>"+data_markers[i].name+"</b>"+"<br>"+data_markers[i].address+"<br><br>"+data_markers[i].kind_food).openPopup()
+			markers.addLayer(marker);
+		};
+	}
+	
+	else{
+		for(i=0;i<data_markers.length; i++){
+				if(data_markers[i].kind_food.includes(filter)){
+
+			var marker = L.marker([data_markers[i].lat, data_markers[i].lng]).bindPopup("<b>"+data_markers[i].name+"</b>"+"<br>"+data_markers[i].address+"<br><br>"+data_markers[i].kind_food).openPopup()
+			markers.addLayer(marker);
+		}};
+	}
+	
+	map.addLayer(markers);
+};
+
 			
-//}

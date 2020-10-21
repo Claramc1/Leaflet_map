@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'my_app');
+$mysqli = new mysqli('127.0.0.1', 'root', '03250325Aa', 'my_app');
 
 if ($mysqli->connect_errno) {
     echo "Lo sentimos, este sitio web está experimentando problemas.";
